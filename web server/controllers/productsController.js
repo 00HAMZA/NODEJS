@@ -1,5 +1,5 @@
 const productService = require("../services/productService");
-const getRequestBody = require("../utils/getRequestBody");
+const getRequestBody = require("../utiles/getRequestbody");
 
 // GET ALL PRODUCTS
 function getAllProducts(req, res) {

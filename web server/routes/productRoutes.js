@@ -5,7 +5,7 @@ const {
   updateProduct,
   patchProduct,
   deleteProduct,
-} = require("../controllers/productController");
+} = require("../controllers/productsController");
 
 function productRoutes(req, res) {
   const url = new URL(req.url, "http://localhost:3000");
