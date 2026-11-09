@@ -6,6 +6,7 @@ const {
   patchProduct,
   deleteProduct,
 } = require("../controllers/productsController");
+const { authentication } = require("../middlewares/logger");
 
 function productRoutes(req, res) {
   const url = new URL(req.url, "http://localhost:3000");
@@ -19,7 +20,9 @@ function productRoutes(req, res) {
   }
 
   if (req.method === "POST" && url.pathname === "/products") {
-    return createProduct(req, res);
+      return authentication(req, res, () =>{
+         createProduct(req, res);
+      })
   }
 
   if (req.method === "PUT" && url.pathname.startsWith("/products/")) {

@@ -5,7 +5,7 @@ function getRequestBody(req){
       body += chunk;
     })
     req.on("end", ()=> {
-      resolve(body);
+      resolve(JSON.parse(body));
     })
     req.on("error", (error)=> {
       reject(error);
