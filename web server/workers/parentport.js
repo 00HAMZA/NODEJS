@@ -1,4 +1,4 @@
-
+const parentPort = require("node:workers_threads");
 
 let result = 0;
 
